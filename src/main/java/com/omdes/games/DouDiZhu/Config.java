@@ -36,21 +36,21 @@ public final class Config {
      */
     private Properties properties;
 
-    private static final String GAME_NAME = "game.name";
-
     private static final String GAME_AUTHOR = "game.author";
 
-    private String gameName;
+    private static final String GAME_NAME = "game.name";
+
+    private static final String GAME_PLAYERS_COUNT = "game.players.count";
+
+    private static final String GAME_CARDS_COUNT = "game.cards.count";
 
     private String gameAuthor;
 
-    public String getGameName() {
-        return gameName;
-    }
+    private String gameName;
 
-    public void setGameName(String gameName) {
-        this.gameName = gameName;
-    }
+    private int playersCount;
+
+    private int cardsCount;
 
     public String getGameAuthor() {
         return gameAuthor;
@@ -60,20 +60,58 @@ public final class Config {
         this.gameAuthor = gameAuthor;
     }
 
+    public String getGameName() {
+        return gameName;
+    }
+
+    public void setGameName(String gameName) {
+        this.gameName = gameName;
+    }
+
+    public int getPlayersCount() {
+        return playersCount;
+    }
+
+    public void setPlayersCount(int playersCount) {
+        this.playersCount = playersCount;
+    }
+
+    public int getCardsCount() {
+        return cardsCount;
+    }
+
+    public void setCardsCount(int cardsCount) {
+        this.cardsCount = cardsCount;
+    }
+
     public void loadProperties(Properties pro) {
         String value = null;
-
-        value = pro.getProperty(GAME_NAME);
-        if (!"".equals(value) && null != value) {
-            this.gameName = value.trim();
-            System.out.println("配置项：游戏名称==>" + GAME_NAME + "==>" + value + " 已加载");
-        }
+        System.out.println("配置项：");
 
         value = pro.getProperty(GAME_AUTHOR);
         if (!"".equals(value) && null != value) {
             this.gameAuthor = value.trim();
-            System.out.println("配置项：游戏开发者==>" + GAME_AUTHOR + "==>" + value + " 已加载");
+            System.out.println("游戏开发者==>" + GAME_AUTHOR + "==>" + value);
         }
+
+        value = pro.getProperty(GAME_NAME);
+        if (!"".equals(value) && null != value) {
+            this.gameName = value.trim();
+            System.out.println("游戏名称==>" + GAME_NAME + "==>" + value);
+        }
+
+        value = pro.getProperty(GAME_PLAYERS_COUNT);
+        if (!"".equals(value) && null != value) {
+            this.playersCount = Integer.parseInt(value.trim());
+            System.out.println("玩家人数==>" + GAME_PLAYERS_COUNT + "==>" + value);
+        }
+
+        value = pro.getProperty(GAME_CARDS_COUNT);
+        if (!"".equals(value) && null != value) {
+            this.cardsCount = Integer.parseInt(value.trim());
+            System.out.println("纸牌数量==>" + GAME_CARDS_COUNT + "==>" + value);
+        }
+        System.out.println("已加载");
     }
 
     public void loadPropertiesFromPath(String rootPath) {
@@ -104,7 +142,7 @@ public final class Config {
                     }
                 }
             } else {
-                // 由于此时可能还没有完成LOG的加载，因此采用标准输出来打印日志信息
+                //由于此时可能还没有完成LOG的加载，因此采用标准输出来打印日志信息
                 System.out.println(rootPath + FILE_NAME + "不存在,加载参数失败");
             }
         } else {
