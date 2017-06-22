@@ -6,7 +6,7 @@ package com.omdes.games.DouDiZhu;
  * Date: 2017/6/20
  * Time: 21:46
  */
-public final class Main {
+public final class GameMain {
 
     public static void main(String[] args) {
         getGameConfig();
