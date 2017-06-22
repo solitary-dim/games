@@ -20,6 +20,7 @@ public final class Config {
      * 操作对象.
      */
     private volatile static Config config;
+
     public static Config getConfig() {
         if (null == config) {
             synchronized (Config.class) {
@@ -44,6 +45,10 @@ public final class Config {
 
     private static final String GAME_CARDS_COUNT = "game.cards.count";
 
+    private static final String GAME_CARDS_MIN = "game.cards.min";
+
+    private static final String GAME_CARDS_MAX = "game.cards.max";
+
     private String gameAuthor;
 
     private String gameName;
@@ -51,6 +56,10 @@ public final class Config {
     private int playersCount;
 
     private int cardsCount;
+
+    private int min;
+
+    private int max;
 
     public String getGameAuthor() {
         return gameAuthor;
@@ -84,6 +93,22 @@ public final class Config {
         this.cardsCount = cardsCount;
     }
 
+    public int getMin() {
+        return min;
+    }
+
+    public void setMin(int min) {
+        this.min = min;
+    }
+
+    public int getMax() {
+        return max;
+    }
+
+    public void setMax(int max) {
+        this.max = max;
+    }
+
     public void loadProperties(Properties pro) {
         String value = null;
         System.out.println("配置项：");
@@ -110,6 +135,18 @@ public final class Config {
         if (!"".equals(value) && null != value) {
             this.cardsCount = Integer.parseInt(value.trim());
             System.out.println("纸牌数量==>" + GAME_CARDS_COUNT + "==>" + value);
+        }
+
+        value = pro.getProperty(GAME_CARDS_MIN);
+        if (!"".equals(value) && null != value) {
+            this.min = Integer.parseInt(value.trim());
+            System.out.println("最少牌数==>" + GAME_CARDS_MIN + "==>" + value);
+        }
+
+        value = pro.getProperty(GAME_CARDS_MAX);
+        if (!"".equals(value) && null != value) {
+            this.max = Integer.parseInt(value.trim());
+            System.out.println("最多牌数==>" + GAME_CARDS_MAX + "==>" + value);
         }
         System.out.println("已加载");
     }

@@ -10,7 +10,7 @@ import java.util.Random;
  * Date: 2017/1/12
  * Time: 16:18
  */
-public class ODouDiZhu {
+public class DouDiZhu {
 
     private static final int TOTAL = 54;
     private static final int GROUP = 3;
