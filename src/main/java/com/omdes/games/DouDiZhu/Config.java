@@ -1,4 +1,4 @@
-package com.omdes.games.DouDiZhu;
+package com.omdes.games.doudizhu;
 
 import java.io.*;
 import java.util.Properties;

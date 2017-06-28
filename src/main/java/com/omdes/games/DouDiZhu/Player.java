@@ -1,4 +1,4 @@
-package com.omdes.games.DouDiZhu;
+package com.omdes.games.doudizhu;
 
 /**
  * Created with IntelliJ IDEA.
