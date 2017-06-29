@@ -1,4 +1,4 @@
-package com.omdes.games.doudizhu;
+package com.omdes.games.ddz;
 
 import java.io.*;
 import java.util.Properties;
@@ -14,7 +14,7 @@ public final class Config {
     /**
      * 配置文件名
      */
-    private static final String FILE_NAME = "DDZConfig.properties";
+    private static final String FILE_NAME = "com/omdes/games/ddz/ddzconfig.properties";
 
     /**
      * 操作对象.
