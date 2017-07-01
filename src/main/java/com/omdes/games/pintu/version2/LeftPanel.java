@@ -14,7 +14,7 @@ import static com.omdes.games.pintu.ConfigConstant.IMG_HEIGHT;
  * Time: 20:13
  */
 public final class LeftPanel implements Serializable {
-    private static final long serialVersionUID = 121089823171800982L;
+    private static final long serialVersionUID = -5689182950558158307L;
 
     private final JPanel jPanel = new JPanel();
 
@@ -33,7 +33,7 @@ public final class LeftPanel implements Serializable {
         jStart.setSize(IMG_WIDTH, IMG_HEIGHT);
         jSuspend.setSize(IMG_WIDTH, IMG_HEIGHT);
 
-        final Box  box = Box.createVerticalBox();
+        final Box box = Box.createVerticalBox();
         box.setSize(IMG_WIDTH, IMG_HEIGHT*3);
         box.add(jStart);
         box.add(Box.createHorizontalStrut(IMG_WIDTH));

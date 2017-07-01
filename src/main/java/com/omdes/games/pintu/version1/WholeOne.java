@@ -1,7 +1,5 @@
 package com.omdes.games.pintu.version1;
 
-import com.omdes.games.pintu.version1.MainRun;
-
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 

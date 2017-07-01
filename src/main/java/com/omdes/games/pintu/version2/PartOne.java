@@ -1,7 +1,6 @@
 package com.omdes.games.pintu.version2;
 
 import com.omdes.games.pintu.ConfigConstant;
-import com.omdes.games.pintu.version1.MainRun;
 
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
